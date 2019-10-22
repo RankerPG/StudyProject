@@ -36,9 +36,9 @@ int solution(string name)
 	return answer;
 }
 
-int main()
-{
-	cout << solution("CANAAAAANAN") << endl;
-
-	return 0;
-}
+//int main()
+//{
+//	cout << solution("CANAAAAANAN") << endl;
+//
+//	return 0;
+//}
