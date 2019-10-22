@@ -130,6 +130,8 @@ int solution(int stock, vector<int> dates, vector<int> supplies, int k)
 		}
 	}
 
+
+
 	return answer;
 }
 
