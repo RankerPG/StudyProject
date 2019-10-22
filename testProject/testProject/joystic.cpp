@@ -12,47 +12,33 @@ int solution(string name)
 {
 	int answer = 0;
 	int len = name.size();
-	int index = -1;
-
-	bool backLoop = false;
+	int path = len - 1;
+	int index = 0;
 
 	for (int i = 0; i < len; ++i)
 	{
-		if ('A' != name[i])
+		if ('N' >= name[i])
+			answer += name[i] - 'A';
+		else
+			answer += 'Z' - name[i] + 1;
+
+		if ('A' != name[i] && 0 != i)
 		{
-			++index;
-
-			if ('N' >= name[i])
-			{
-				//answer += name[i] - 'A';
-			}
-			else
-			{
-				//answer += 'Z' - name[i] + 1;
-			}
-
-			if (i != index)
-			{
-				if (i - index > index + len - i)
-				{
-					answer += index + len - i;
-					backLoop = true;
-				}
-
-				index = i;
-			}
+			int backPath = (index * 2) + path - i + 1;
+			if (path > backPath)
+				path = backPath;
+			index = i;
 		}
 	}
 
-	if (false == backLoop)
-		answer += index;
+	answer += path;
 
 	return answer;
 }
 
 int main()
 {
-	solution("JAN");
+	cout << solution("CANAAAAANAN") << endl;
 
 	return 0;
 }
