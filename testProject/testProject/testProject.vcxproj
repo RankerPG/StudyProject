@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="4dan.cpp" />
     <ClCompile Include="add.cpp" />
+    <ClCompile Include="colorbook.cpp" />
     <ClCompile Include="joystic.cpp" />
     <ClCompile Include="pow.cpp" />
     <ClCompile Include="testProject.cpp" />
