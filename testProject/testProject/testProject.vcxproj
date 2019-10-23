@@ -153,7 +153,9 @@
   <ItemGroup>
     <ClCompile Include="add.cpp" />
     <ClCompile Include="joystic.cpp" />
+    <ClCompile Include="pow.cpp" />
     <ClCompile Include="testProject.cpp" />
+    <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
