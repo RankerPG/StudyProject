@@ -157,6 +157,8 @@
     <ClCompile Include="joystic.cpp" />
     <ClCompile Include="maraton.cpp" />
     <ClCompile Include="pow.cpp" />
+    <ClCompile Include="presentNumber.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="testProject.cpp" />
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>
