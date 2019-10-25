@@ -19,9 +19,9 @@ int solution(int n)
 	return 0;
 }
 
-int main()
-{
-	cout << solution(2147483647) << endl;
-
-	return 0;
-}
+//int main()
+//{
+//	cout << solution(2147483647) << endl;
+//
+//	return 0;
+//}
