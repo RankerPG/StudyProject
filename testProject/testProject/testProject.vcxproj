@@ -154,9 +154,11 @@
     <ClCompile Include="2xTile.cpp" />
     <ClCompile Include="4dan.cpp" />
     <ClCompile Include="add.cpp" />
+    <ClCompile Include="brian%27sworry.cpp" />
     <ClCompile Include="colorbook.cpp" />
     <ClCompile Include="joystic.cpp" />
     <ClCompile Include="maraton.cpp" />
+    <ClCompile Include="network.cpp" />
     <ClCompile Include="pow.cpp" />
     <ClCompile Include="presentNumber.cpp" />
     <ClCompile Include="test.cpp" />

@@ -5,68 +5,70 @@
 
 using namespace std;
 
-int NumberDFS(int p_n, int p_number, int p_addN, int p_cnt)
+namespace presentNumber
 {
-	int checkCnt = 9;
-	int tempCnt = 0;
-
-	if (p_addN == p_number)
-		return p_cnt;
-	if (8 < p_cnt)
-		return 9;
-
-	tempCnt = NumberDFS(p_n, p_number, p_addN * 10 + p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-
-	tempCnt = NumberDFS(p_n, p_number, p_addN + 10 * p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-	 
-	tempCnt = NumberDFS(p_n, p_number, p_addN * p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-
-	tempCnt = NumberDFS(p_n, p_number, p_addN / p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-
-	tempCnt = NumberDFS(p_n, p_number, p_addN + p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-
-	tempCnt = NumberDFS(p_n, p_number, p_addN - p_n, p_cnt + 1);
-	if (tempCnt < checkCnt)
-		checkCnt = tempCnt;
-
-	if (1 != p_n)
+	int NumberDFS(int p_n, int p_number, int p_addN, int p_cnt)
 	{
-		tempCnt = NumberDFS(p_n, p_number, p_addN + 1, p_cnt + 2);
+		int checkCnt = 9;
+		int tempCnt = 0;
+
+		if (p_addN == p_number)
+			return p_cnt;
+		if (8 < p_cnt)
+			return 9;
+
+		tempCnt = NumberDFS(p_n, p_number, p_addN * 10 + p_n, p_cnt + 1);
 		if (tempCnt < checkCnt)
 			checkCnt = tempCnt;
 
-		tempCnt = NumberDFS(p_n, p_number, p_addN - 1, p_cnt + 2);
+		tempCnt = NumberDFS(p_n, p_number, p_addN + 10 * p_n, p_cnt + 1);
 		if (tempCnt < checkCnt)
 			checkCnt = tempCnt;
+
+		tempCnt = NumberDFS(p_n, p_number, p_addN * p_n, p_cnt + 1);
+		if (tempCnt < checkCnt)
+			checkCnt = tempCnt;
+
+		tempCnt = NumberDFS(p_n, p_number, p_addN / p_n, p_cnt + 1);
+		if (tempCnt < checkCnt)
+			checkCnt = tempCnt;
+
+		tempCnt = NumberDFS(p_n, p_number, p_addN + p_n, p_cnt + 1);
+		if (tempCnt < checkCnt)
+			checkCnt = tempCnt;
+
+		tempCnt = NumberDFS(p_n, p_number, p_addN - p_n, p_cnt + 1);
+		if (tempCnt < checkCnt)
+			checkCnt = tempCnt;
+
+		if (1 != p_n)
+		{
+			tempCnt = NumberDFS(p_n, p_number, p_addN + 1, p_cnt + 2);
+			if (tempCnt < checkCnt)
+				checkCnt = tempCnt;
+
+			tempCnt = NumberDFS(p_n, p_number, p_addN - 1, p_cnt + 2);
+			if (tempCnt < checkCnt)
+				checkCnt = tempCnt;
+		}
+
+		return checkCnt;
 	}
 
-	return checkCnt;
+	int solution(int N, int number)
+	{
+		int answer = 0;
+
+		answer = NumberDFS(N, number, N, 1);
+		// DFS or BFS로 생각해보는 습관을 가져야 될 듯..
+
+
+		if (8 < answer)
+			return -1;
+
+		return answer;
+	}
 }
-
-int solution(int N, int number)
-{
-	int answer = 0;
-
-	answer = NumberDFS(N, number, N, 1);
-	// DFS or BFS로 생각해보는 습관을 가져야 될 듯..
-
-
-	if (8 < answer)
-		return -1;
-
-	return answer;
-}
-
 
 //int main()
 //{
